@@ -10,7 +10,7 @@
         .move{float: left; height: 300px; width: 300px; word-wrap: break-word; border: 1px dashed #a0a0a0; border-radius: 10px; overflow: hidden; margin: 10px; transition: all 0.5s; color: black;}
         .move :first-child{font-size: 30px; text-align: center; margin: 20px;}
         .move :last-child{font-size: 20px; text-align: center; margin: 20px; color: #424242;}
-        footer{background-color: #d1d1d1; text-align: center; padding: 50px; color: #424242; clear: left; width: 100%;}
+        footer{background-color: #d1d1d1; text-align: center; padding: 50px; color: #424242; clear: left; box-sizing: border-box;}
         .move:hover {
             transform: translateY(-15px) scale(1.02);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);}
@@ -18,7 +18,7 @@
 </head>
 
 
-<body style="margin: 0;">
+<body>
     <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
     
     <div style="overflow: hidden; border-radius: 10px; margin: 10px; padding: 0; background-color: rgb(111, 124, 113); width: calc(100% - 20px);">

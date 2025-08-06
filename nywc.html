@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SunMoon|你演我猜</title>
+    <link rel="icon" href="favicon.png">
+    <style>
+        *{text-decoration: none; margin: 0; padding: 0; width: 100%; height: 100%;}
+        #word, #pinyin{display: flex; align-items: center; justify-content: center; background-color: rgb(111, 124, 113); color: #cccccc; height: 50%;}
+    </style>
+</head>
+<body>
+    <a href="javascript:generateRandomWord()">
+        <div id = "word" style="font-size: 20vw;"></div>
+        <div id = "pinyin" style="font-size: 10vw;"></div>
+    </a>
+
+    <script>
+        const words = [
+            { word: "开心", pinyin: "kāi xīn"},
+            { word: "生气", pinyin: "shēng qì"},
+            { word: "玩游戏", pinyin: "wán yóu xì"},
+            { word: "开车", pinyin: "kāi chē"},
+            { word: "喝水", pinyin: "hē shuǐ"},
+            { word: "穿衣服", pinyin: "chuān yī fu"},
+            { word: "骑自行车", pinyin: "qí zì xíng chē"},
+            { word: "坐电梯", pinyin: "zuò diàn tī"},
+            { word: "坐扶梯", pinyin: "zuò fú tī"},
+            { word: "上楼梯", pinyin: "shàng lóu tī"},
+            { word: "写作业", pinyin: "xiě zuò yè"},
+            { word: "看手机", pinyin: "kàn shǒu jī"},
+            { word: "失望", pinyin: "shī wàng"},
+            { word: "听歌", pinyin: "tīng gē"},
+            { word: "吃饭", pinyin: "chī fàn"},
+            { word: "按摩", pinyin: "àn mó"},
+            { word: "打架", pinyin: "dǎ jià"},
+            { word: "喜出望外", pinyin: "xǐ chū wàng wài"},
+            { word: "读书", pinyin: "dú shū"},
+            { word: "玩起泡胶", pinyin: "wán qǐ pào jiāo"},
+            { word: "玩游戏", pinyin: "wán yóu xì"}
+        ];
+        const wordElement = document.getElementById('word');
+        const pinyinElement = document.getElementById('pinyin');
+
+        let refreshCount = 0;
+        let uniqueWords = new Set();
+
+        function generateRandomWord() {
+            const randomIndex = Math.floor(Math.random() * words.length);
+            const randomWord = words[randomIndex];
+            
+            // 添加动画效果
+            wordElement.classList.remove('word-change');
+            void wordElement.offsetWidth; // 触发重排
+            wordElement.classList.add('word-change');
+            
+            // 更新显示
+            wordElement.textContent = randomWord.word;
+            pinyinElement.textContent = randomWord.pinyin;
+        }
+
+        window.addEventListener('DOMContentLoaded', generateRandomWord);
+    </script>
+</body>
+</html>

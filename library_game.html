@@ -5,6 +5,7 @@
     <link rel="icon" href="favicon.png">
     <title>SunMoon|图书馆挠痒大作战</title>
     <style>
+        html{touch-action: manipulation;}
         *{margin: 0; padding: 0;}
         .butt{font-size: 3vw; color: #fff; transition: all 0.1s; border-radius: 20px; width: 15%; border: 0;}
         #b1{background-color: rgb(84, 201, 201);}
@@ -87,9 +88,6 @@
             prog.value -= 100;
         };
 
-        document.addEventListener('dblclick', function(event) {
-            event.preventDefault();
-        });
         
         // function tijiao(){
         //     var name = document.getElementById('tijiao');

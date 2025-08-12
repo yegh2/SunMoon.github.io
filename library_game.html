@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html style="background-color: rgb(111, 124, 113);">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta charset="UTF-8">
     <link rel="icon" href="favicon.png">
     <title>SunMoon|图书馆挠痒大作战</title>
@@ -87,6 +86,10 @@
             }
             prog.value -= 100;
         };
+
+        document.addEventListener('dblclick', function(event) {
+            event.preventDefault();
+        });
         
         // function tijiao(){
         //     var name = document.getElementById('tijiao');

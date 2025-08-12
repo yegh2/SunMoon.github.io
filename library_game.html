@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html style="background-color: rgb(111, 124, 113);">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="favicon.png">
+    <title>SunMoon|图书馆挠痒大作战</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        .butt{font-size: 3vw; color: #fff; transition: all 0.1s; border-radius: 20px; width: 15%; border: 0;}
+        #b1{background-color: rgb(84, 201, 201);}
+        #b2{background-color:  orangered;}
+        #b1:hover{background-color: rgb(105, 182, 182);}
+        #b2:hover{background-color: rgb(231, 107, 62);}
+    </style>
+</head>
+<body>
+    <div id="remove">
+        <div style="height: 4vw;"></div>
+        <div style="font-size: 10vw; text-align: center; color: #cccccc;">图书馆挠痒大作战</div>
+        <div style="height: 4vw;"></div>
+        <div style="text-align: center;">
+            <progress style="width: 60%; height: 40px;" max="1000" value="0" id="prog"></progress>
+        </div>
+        <div style="height: 5vw;"></div>
+        <div style="text-align: center; display: flex; justify-content: space-evenly;">
+            <button type="button" class="butt" id="b1" onclick="upone()">学习</button>
+            <button type="button" class="butt" id="b2" onclick="nao()">挠痒</button>
+        </div>
+        <div style="height: 2vw;"></div>
+        <div style="font-size: 3vw; color: #cccccc; text-align: center; display: flex; justify-content: center;">
+            <div>当前分数:</div>
+            <div class="fen3">0</div>
+        </div>
+        <div style="text-align: center; color: red; font-size: 2vw; display: none;" id="toupai">
+            偷拍中
+        </div>
+    </div>
+
+    <div id="over1" style="display: none; text-align: center;">
+        <div style="height: 3vw;"></div>
+        <div style="font-size: 5vw;">游戏结束，您被痒死了</div>
+        <div style="height: 3vw;"></div>
+        <div style="display: flex; font-size: 4vw; justify-content: center;">
+            <div>您的分数是:</div>
+            <div class="fen3">0</div>
+        </div>
+    </div>
+    
+    <div id="over2" style="display: none; text-align: center;">
+        <div style="height: 3vw;"></div>
+        <div style="font-size: 5vw;">游戏结束，您被偷拍了</div>
+        <div style="height: 3vw;"></div>
+        <div style="display: flex; font-size: 4vw; justify-content: center;">
+            <div>您的分数是:</div>
+            <div class="fen3">0</div>
+        </div>
+    </div>
+
+    <script>
+        var defen = 0;
+        var prog = document.getElementById('prog');
+        var istp = 0
+        var isover = 0
+        function upone(){
+            defen += 1;
+            document.getElementsByClassName('fen3')[0].textContent = defen;
+            document.getElementsByClassName('fen3')[1].textContent = defen;
+            document.getElementsByClassName('fen3')[2].textContent = defen;
+        };
+        function nao(){
+            if (istp==1){
+                isover = 1
+                document.getElementById('remove').innerHTML = '';
+                document.getElementById('over2').style.display = 'block';
+            }
+            prog.value -= 100;
+        };
+        setInterval(function(){
+            if (isover==0){
+            document.documentElement.style.backgroundColor = 'rgb(199, 64, 64)';
+            document.getElementById('toupai').style.display = 'block'
+            istp = 1;
+            }
+        }, 5000);
+        setInterval(function(){
+            if (isover==0){
+            document.documentElement.style.backgroundColor = 'rgb(111, 124, 113)';
+            document.getElementById('toupai').style.display = 'none'
+            istp = 0;
+            }
+        }, 3000);
+        setInterval(function(){
+            if (isover==0){
+            prog.value++;
+            if (prog.value >= 1000){
+                isover = 1
+                document.getElementById('remove').innerHTML = '';
+                document.getElementById('over1').style.display = 'block';
+            };
+            }
+        }, 1);
+    </script>
+</body>
+</html>

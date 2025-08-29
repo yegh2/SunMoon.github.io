@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="background-color: rgb(111, 124, 113);">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SunMoon|图书馆挠痒大作战</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        .butt{font-size: 3vw; color: #fff; transition: all 0.1s; border-radius: 20px; width: 15%; border: 0;}
+        #b1{background-color: rgb(84, 201, 201);}
+        #b2{background-color:  orangered;}
+        #b1:hover{background-color: rgb(105, 182, 182);}
+        #b2:hover{background-color: rgb(231, 107, 62);}
+    </style>
+</head>
+<body>
+    <div style="height: 10vw;"></div>
+    <div style="font-size: 10vw; text-align: center; color: #cccccc;">图书馆挠痒大作战</div>
+    <div style="height: 10vw;"></div>
+
+    <div style="text-align: center; display: flex; justify-content: space-evenly;">
+        <button type="button" class="butt" id="b1" onclick="start()">开始游戏</button>
+        <button type="button" class="butt" id="b2" onclick="guize()">游戏规则</button>
+    </div>
+
+    <script>
+        function start(){
+            location.href = 'library_game.html'
+        }
+    </script>
+</body>
+</html>
